@@ -9,7 +9,7 @@ type task struct {
 	index int //用来记录任务号
 }
 
-// MultipleMachineScheduling 输入ti为各个任务需要时间，m为机器数；输出为需要总时间；会将调度方案打印
+// MultipleMachineScheduling 输入ti为各个任务需要时间，m为机器数；输出为需要总时间；会将调度方案打印；贪心算法
 func MultipleMachineScheduling(ti []int, m int) (all int) {
 	if m == 1 {
 		fmt.Print("机器0：")
