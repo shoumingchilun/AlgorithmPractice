@@ -1,4 +1,4 @@
-package easyAlgorithmProblem
+package findRetail
 
 import (
 	"fmt"

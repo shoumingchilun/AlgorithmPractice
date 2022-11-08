@@ -1,4 +1,4 @@
-package easyAlgorithmProblem
+package findRetail
 
 //题目：当前有面值分别为 2 角 5 分，1 角，5 分，1 分的硬币，请给出找 n 分钱的最佳方案（要求找出的硬币数目最少）。
 
