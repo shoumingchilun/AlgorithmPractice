@@ -1,5 +1,6 @@
 package mergoSort
 
+// MergoSort 降序排列
 func MergoSort(numbers []int) (orderedNumbers []int) {
 	if len(numbers) <= 1 {
 		return numbers

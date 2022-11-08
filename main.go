@@ -2,9 +2,9 @@ package main
 
 import (
 	"fmt"
-	"workSpace/mergoSort"
+	"workSpace/basicAlgorithm/quickSort"
 )
 
 func main() {
-	fmt.Println(mergoSort.MergoSort([]int{3, 4, 2, 1, 5, 7, 8, 4, 7}))
+	fmt.Println(quickSort.QuickSort([]int{3, 4, 2, 1, 5, 7, 8, 4, 7}))
 }
