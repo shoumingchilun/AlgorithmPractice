@@ -12,7 +12,7 @@ type task struct {
 // MultipleMachineScheduling 输入ti为各个任务需要时间，m为机器数；输出为需要总时间；会将调度方案打印
 func MultipleMachineScheduling(ti []int, m int) (all int) {
 	if m == 1 {
-		fmt.Print("机器1：")
+		fmt.Print("机器0：")
 		for i := 0; i < len(ti); i++ {
 			fmt.Print("任务", i, ",")
 			all += ti[i]
