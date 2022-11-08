@@ -1,4 +1,4 @@
-package EasyAlgorithmProblem
+package easyAlgorithmProblem
 
 import (
 	"fmt"
