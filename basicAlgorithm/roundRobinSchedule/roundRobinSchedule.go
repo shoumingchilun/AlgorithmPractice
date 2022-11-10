@@ -34,7 +34,7 @@ func simpleCopy(n int, a *Schedule) {
 	}
 }
 
-// RoundRobinSchedule nmd做不出来
+// RoundRobinSchedule nmd终于做出来了
 // RoundRobinSchedule 传入队伍数量n，n为任意正偶数，返回日程安排数组int[][]类似Simple
 func RoundRobinSchedule(n int) [][]int {
 	if n&1 == 1 || n <= 0 {
@@ -91,26 +91,4 @@ func roundRobinSchedule2(n int, a *Schedule) {
 			}
 		}
 	}
-	////先获得n/2是奇数还是偶数，如果是奇数，需要特别计算，如果是偶数，可降规模，然后重新计算
-	//if n&1 != 1 {
-	//	m := n / 2
-	//	roundRobinSchedule2(m, a)
-	//	for i := 0; i < m; i++ {
-	//		for j := 0; j < m; j++ {
-	//			a.a[m+i][m+j] = a.a[i][j]
-	//			a.a[i][m+j] = a.a[i][j] + m
-	//			a.a[m+i][j] = a.a[i][j] + m
-	//		}
-	//	}
-	//} else {
-	//	n++
-	//	roundRobinSchedule2(n, a) //获得n+1时的图像，到时候再获得前n行n+1列的内容；现在n为4
-	//	n--                       //还原n,现在n是3
-	//	//for i := 0; i < n; i++ {  //先获得下方和后方1列的未处理数据
-	//	//	for j := 0; j < n+1; j++ {
-	//	//		a.a[n+i][j] = a.a[i][j] + n
-	//	//	}
-	//	//}
-	//
-	//}
 }
