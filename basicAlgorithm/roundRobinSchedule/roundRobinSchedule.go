@@ -51,9 +51,14 @@ func roundRobinSchedule2(n int, a *Schedule) {
 		a.a[0][0] = 1
 		return
 	}
-	//先获得n/2是奇数还是偶数，如果是奇数，需要特别计算，如果是偶数，可降规模，然后重新计算
-	if n&1 != 1 {
-		m := n / 2
+	m := n / 2
+	if m&1 == 1 && m != 1 { //说明n不可降规模，需要直接计算，m集合为3,5,7,...
+		//直接计算
+		m++
+		roundRobinSchedule2(m, a) //获得四分之一多一点
+
+	} else { //说明n可以继续降规模,m集合为1,2,4,6,...
+		//计算四分之一后扩大到整个n
 		roundRobinSchedule2(m, a)
 		for i := 0; i < m; i++ {
 			for j := 0; j < m; j++ {
@@ -62,15 +67,27 @@ func roundRobinSchedule2(n int, a *Schedule) {
 				a.a[m+i][j] = a.a[i][j] + m
 			}
 		}
-	} else {
-		n++
-		roundRobinSchedule2(n, a) //获得n+1时的图像，到时候再获得前n行n+1列的内容；现在n为4
-		n--                       //还原n,现在n是3
-		//for i := 0; i < n; i++ {  //先获得下方和后方1列的未处理数据
-		//	for j := 0; j < n+1; j++ {
-		//		a.a[n+i][j] = a.a[i][j] + n
-		//	}
-		//}
-
 	}
+	////先获得n/2是奇数还是偶数，如果是奇数，需要特别计算，如果是偶数，可降规模，然后重新计算
+	//if n&1 != 1 {
+	//	m := n / 2
+	//	roundRobinSchedule2(m, a)
+	//	for i := 0; i < m; i++ {
+	//		for j := 0; j < m; j++ {
+	//			a.a[m+i][m+j] = a.a[i][j]
+	//			a.a[i][m+j] = a.a[i][j] + m
+	//			a.a[m+i][j] = a.a[i][j] + m
+	//		}
+	//	}
+	//} else {
+	//	n++
+	//	roundRobinSchedule2(n, a) //获得n+1时的图像，到时候再获得前n行n+1列的内容；现在n为4
+	//	n--                       //还原n,现在n是3
+	//	//for i := 0; i < n; i++ {  //先获得下方和后方1列的未处理数据
+	//	//	for j := 0; j < n+1; j++ {
+	//	//		a.a[n+i][j] = a.a[i][j] + n
+	//	//	}
+	//	//}
+	//
+	//}
 }

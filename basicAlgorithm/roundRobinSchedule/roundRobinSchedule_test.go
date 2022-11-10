@@ -6,7 +6,7 @@ import (
 )
 
 func TestRoundRobinSchedule(t *testing.T) {
-	n := 6
+	n := 8
 	var a = RoundRobinSchedule(n)
 	for i := 0; i < n; i++ {
 		fmt.Println(a[i])
