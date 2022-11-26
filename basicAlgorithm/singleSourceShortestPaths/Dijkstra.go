@@ -1,7 +1,6 @@
 package singleSourceShortestPaths
 
 import (
-	"fmt"
 	"math"
 	"workSpace/basicDataStructure"
 )
@@ -25,7 +24,7 @@ func Dijkstra(am basicDataStructure.AdjacencyMatrix, p int) (sd []float64) {
 				sd[j] = nd
 			}
 		}
-		fmt.Println(sd)
+		//fmt.Println(sd)
 	}
 	return
 }
@@ -47,6 +46,6 @@ func sp(sd []float64, ps []int) int {
 			index = i
 		}
 	}
-	fmt.Println(index)
+	//fmt.Println(index)
 	return index
 }
