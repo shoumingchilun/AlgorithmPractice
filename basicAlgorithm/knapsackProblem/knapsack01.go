@@ -9,8 +9,8 @@ import (
 // knapsack01 输出：代表被选择货物的int切片，最高价值
 func knapsack01(weight []int, value []int, c int) (selected []int, all int) {
 	number := len(weight)
-	m := convenientMethod.Create2DSlice2[int](number, c+1)
-	index := convenientMethod.Create2DSlice2[[]int](number, c+1)
+	m := convenientMethod.Create2DSlice2[int](number, c+1)       //就是那张推演的表
+	index := convenientMethod.Create2DSlice2[[]int](number, c+1) //记录被选中的物品
 	for i := 0; i < number; i++ {
 		m[i][0] = 0
 		index[i][0] = make([]int, 1)
