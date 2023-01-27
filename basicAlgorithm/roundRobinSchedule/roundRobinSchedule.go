@@ -34,7 +34,7 @@ func simpleCopy(n int, a *Schedule) {
 	}
 }
 
-// RoundRobinSchedule nmd终于做出来了
+// RoundRobinSchedule tmd终于做出来了
 // RoundRobinSchedule 传入队伍数量n，n为任意正偶数，返回日程安排数组int[][]类似Simple
 func RoundRobinSchedule(n int) [][]int {
 	if n&1 == 1 || n <= 0 {

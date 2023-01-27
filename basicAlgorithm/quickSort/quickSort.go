@@ -6,6 +6,7 @@ func QuickSort(numbers []int) (orderedNumbers []int) {
 		return numbers[:]
 	}
 	flag := true
+	//flag is used to record whether the right or the left number of the array is comparing .
 	i, j, k := 0, 0, len(numbers)-1
 	for j != k {
 		if numbers[k] > numbers[i] && flag {

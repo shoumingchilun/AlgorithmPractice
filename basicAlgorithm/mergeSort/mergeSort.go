@@ -1,13 +1,13 @@
-package mergoSort
+package mergeSort
 
-// MergoSort 降序排列
-func MergoSort(numbers []int) (orderedNumbers []int) {
+// MergeSort 降序排列
+func MergeSort(numbers []int) (orderedNumbers []int) {
 	if len(numbers) <= 1 {
 		return numbers
 	} else {
 		mid := len(numbers) / 2
-		left := MergoSort(numbers[:mid])
-		right := MergoSort(numbers[mid:])
+		left := MergeSort(numbers[:mid])
+		right := MergeSort(numbers[mid:])
 		orderedNumbers = Merge(left, right)
 		return
 	}
