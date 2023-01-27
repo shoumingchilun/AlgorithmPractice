@@ -16,8 +16,9 @@ func Dijkstra(am basicDataStructure.AdjacencyMatrix, p int) (sd []float64) {
 		sd[j] = am.Distances[p][j]
 	}
 	for i := 1; i < numbers; i++ { //i用来计数到达点集中点的数量
-		index := sp(sd, ps) //决定加入的点
-		ps[i] = index       //然后更新最短距离
+		index := sp(sd, ps) //决定加入的点，并加入
+		ps[i] = index
+		//然后更新最短距离
 		for j := 0; j < numbers; j++ {
 			nd := am.Distances[ps[i]][j] + sd[ps[i]]
 			if sd[j] > nd {
