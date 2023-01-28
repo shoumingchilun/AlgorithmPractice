@@ -11,6 +11,7 @@ func knapsack01(weight []int, value []int, c int) (selected []int, all int) {
 	number := len(weight)
 	m := convenientMethod.Create2DSlice2[int](number, c+1)       //就是那张推演的表
 	index := convenientMethod.Create2DSlice2[[]int](number, c+1) //记录被选中的物品
+	//设置第一行和第一列的数据，作为后面递推会用到的边界条件
 	for i := 0; i < number; i++ {
 		m[i][0] = 0
 		index[i][0] = make([]int, 1)
@@ -27,6 +28,7 @@ func knapsack01(weight []int, value []int, c int) (selected []int, all int) {
 			index[0][i][0] = -1
 		}
 	}
+
 	for i := 1; i < number; i++ {
 		for j := 1; j <= c; j++ {
 			if j > weight[i] {

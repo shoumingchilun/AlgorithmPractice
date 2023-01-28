@@ -1,6 +1,6 @@
 package chorusFormation
 
-// chorusFormation N位同学站成一排，音乐老师要请其中的(N-K)位同学出列，使得剩下的K位同学排成合唱队形。合唱队形是指这样的一种队形：设K位同学从左到右依次编号为1, 2, …, K，他们的身高分别为T1, T2, …, TK，则他们的身高满足T1 < T2 < … < Ti , Ti > Ti+1 > … > TK (1 <= i <= K)。
+// chorusFormation 合唱队列问题，N位同学站成一排，音乐老师要请其中的(N-K)位同学出列，使得剩下的K位同学排成合唱队形。合唱队形是指这样的一种队形：设K位同学从左到右依次编号为1, 2, …, K，他们的身高分别为T1, T2, …, TK，则他们的身高满足T1 < T2 < … < Ti , Ti > Ti+1 > … > TK (1 <= i <= K)。
 // chorusFormation 已知所有N位同学的身高，计算最少需要几位同学出列，可以使得剩下的同学排成合唱队形。（注：身高不能相等）
 // chorusFormation 输入：代表身高的int切片；输出：代表保留人员序号的int切片和最小出列人数
 func chorusFormation(a []int) (index []int, minOut int) {
