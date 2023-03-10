@@ -1,7 +1,6 @@
 package minimumSpanningTree
 
 import (
-	"fmt"
 	"math"
 	"workSpace/basicDataStructure"
 )
@@ -21,7 +20,6 @@ func Prim(am basicDataStructure.AdjacencyMatrix) (ans basicDataStructure.Adjacen
 		distances[i].distance = am.Distances[0][i]
 		distances[i].source = 0
 	}
-	fmt.Println(distances)
 	//找到要加入的节点，开始一系列操作
 	for i := 1; i < peers; i++ { //运行peers-1次以加入剩余peers-1个节点
 		min := math.MaxFloat64
