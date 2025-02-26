@@ -4,6 +4,7 @@ package partitioningPalindromic
 https://leetcode.cn/problems/palindrome-partitioning/description/
 131. 分割回文串
 */
+var judged = make(map[string]bool)
 
 func partitioningPalindromic(s string) [][]string {
 	if len(s) == 1 {
@@ -26,10 +27,17 @@ func backtrace(currentStrings []string, index int, s string, ret *[][]string) {
 	}
 }
 func judgePalindromic(s string) bool {
+	isPal, exist := judged[s]
+	if exist {
+		return isPal
+	}
+
 	for i, j := 0, len(s)-1; i < j; i, j = i+1, j-1 {
 		if s[i] != s[j] {
+			judged[s] = false
 			return false
 		}
 	}
+	judged[s] = true
 	return true
 }
