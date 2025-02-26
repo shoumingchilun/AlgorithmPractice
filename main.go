@@ -5,7 +5,7 @@ import (
 )
 
 func main() {
-	for _, c := range "你好" {
+	for _, c := range "2345" {
 		fmt.Println(c)
 	}
 	fmt.Println(len("你好"))
