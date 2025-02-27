@@ -16,4 +16,6 @@ func main() {
 	for _, c := range r {
 		fmt.Println(c)
 	}
+	a := new(struct{ I int })
+	fmt.Println(a.I)
 }
